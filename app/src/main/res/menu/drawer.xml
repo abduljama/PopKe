@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+            <item android:title="Register" android:id="@+id/navigation_item_2" android:icon="@drawable/composea" ></item>
+            <item android:title="Donate"  android:icon="@drawable/inbox" ></item>
+            <item android:title="Program" android:icon="@drawable/senta"></item>
+              <item android:title="Media Feed" android:icon="@drawable/draft"></item>
+
+
+
+    <item android:title="Prayers &amp; Hymns">
+
+        <menu>
+            <item
+                android:title="Daily Prayers" android:icon="@drawable/spam"/>
+            <item
+                android:title="Hymns" android:icon="@drawable/bin"/>
+        </menu>
+    </item>
+
+    <item android:title="More">
+        <menu>
+            <item
+                android:title="Gallery" android:icon="@drawable/spam"/>
+            <item
+                android:title="Something Here" android:icon="@drawable/bin"/>
+        </menu>
+    </item>
+
+    <group android:id="@+id/others">
+
+            <item android:title="Settings" android:icon="@drawable/settings"></item>
+            <item android:title="Help" android:icon="@drawable/help"></item>
+        <item android:title="About" android:icon="@drawable/help"></item>
+    </group>
+
+
+
+
+
+</menu>
