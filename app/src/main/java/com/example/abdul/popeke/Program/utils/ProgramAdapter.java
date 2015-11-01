@@ -44,7 +44,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.MyViewHo
         ProgramItems current = data.get(position);
         holder.pTitle.setText(current.pTitle);
         holder.pTime.setText("Time : "+ current.pTime);
-        holder.location.setText("Venue : " + current.pLocation);
+        holder.location.setText("Venue :" + current.pLocation);
         holder.pDesc.setText(current.pDesc);
         holder.image.setImageResource(current.pImage);
     }
