@@ -3,4 +3,35 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="program_one">Lorem ipsum dolor sit amet, vero munere accusata pri ei, cu sea purto veniam eloquentiam, fugit vocibus ea vis. Postea mollis prodesset eu per, ut sit fabulas detracto sententiae. Per idque aliquam lucilius te, semper nostro offendit his ad, nam in velit appareat mnesarchum.,</string>
+
+
+
+        <string-array name="title_array">
+            <item>Holy Mass</item>
+            <item> Dummy Title </item>
+            <item> Dummy Title  </item>
+            <item> Dummy Title   </item>
+        </string-array>
+
+
+        <string-array name="venue_array">
+            <item>University of Nairobi</item>
+            <item> Dummy Title  </item>
+            <item>  Dummy Title   </item>
+            <item> Dummy Location </item>
+        </string-array>
+
+
+
+        <string-array name="time_array">
+            <item>08:00 - 10:00 AM </item>
+            <item>12:00 - 1:00  PM  </item>
+            <item>03:00 - 4:00  PM  </item>
+            <item>05:00 - 07:00 PM  </item>
+        </string-array>
+
 </resources>

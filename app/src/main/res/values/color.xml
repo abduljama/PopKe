@@ -147,4 +147,12 @@
     <color name="holo_blue_dark">#ff0099cc</color>
     <color name="PaleRed">#c80000</color>
     <color name="LigthCoral">#f0a0a0</color>
+
+
+    <color name="colorPrimary">#ff5722</color>
+    <color name="colorPrimaryDark">#f4511e</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#ffab91</color>
 </resources>

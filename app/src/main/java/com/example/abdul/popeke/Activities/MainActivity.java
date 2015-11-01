@@ -1,4 +1,4 @@
-package com.example.abdul.popeke;
+package com.example.abdul.popeke.Activities;
 
 /**
  * Created by kiprop on 10/27/15.
@@ -12,6 +12,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
+import com.example.abdul.popeke.AboutFragment;
+import com.example.abdul.popeke.DonateFragment;
+import com.example.abdul.popeke.GalleryFragment;
+import com.example.abdul.popeke.HymnsFragment;
+import com.example.abdul.popeke.MapsFragment;
+import com.example.abdul.popeke.PrayersFragment;
+import com.example.abdul.popeke.Program.ProgramFragment;
+import com.example.abdul.popeke.R;
+import com.example.abdul.popeke.RegisterFragment;
+import com.example.abdul.popeke.SettingsFragment;
+import com.example.abdul.popeke.NewsItems.TabFragment;
 
 
 public class MainActivity extends AppCompatActivity {

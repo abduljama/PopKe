@@ -1,4 +1,4 @@
-package com.example.abdul.popeke;
+package com.example.abdul.popeke.NewsItems;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.abdul.popeke.R;
+
 /**
  * Created by Ratan on 7/29/2015.
  */
-public class ProgramFragment extends Fragment {
+public class PrimaryFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.program_layout,null);
+        return inflater.inflate(R.layout.primary_layout,null);
     }
 }

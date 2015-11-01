@@ -1,4 +1,4 @@
-package com.example.abdul.popeke;
+package com.example.abdul.popeke.Program;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,11 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Ratan on 7/27/2015.
- */
-public class TabFragment extends Fragment {
+import com.example.abdul.popeke.R;
 
+/**
+ * Created by Ratan on 7/29/2015.
+ */
+public class ProgramFragment extends Fragment {
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
     public static int int_items = 3 ;
@@ -26,9 +27,10 @@ public class TabFragment extends Fragment {
         /**
          *Inflate tab_layout and setup Views.
          */
-            View x =  inflater.inflate(R.layout.tab_layout,null);
-            tabLayout = (TabLayout) x.findViewById(R.id.tabs);
-            viewPager = (ViewPager) x.findViewById(R.id.viewpager);
+
+        View x =   inflater.inflate(R.layout.program_layout,null);
+        tabLayout = (TabLayout) x.findViewById(R.id.pTabs);
+        viewPager = (ViewPager) x.findViewById(R.id.pViewpager);
 
         /**
          *Set an Apater for the View Pager
@@ -44,8 +46,8 @@ public class TabFragment extends Fragment {
         tabLayout.post(new Runnable() {
             @Override
             public void run() {
-                    tabLayout.setupWithViewPager(viewPager);
-                   }
+                tabLayout.setupWithViewPager(viewPager);
+            }
         });
 
         return x;
@@ -65,12 +67,12 @@ public class TabFragment extends Fragment {
         @Override
         public Fragment getItem(int position)
         {
-          switch (position){
-              case 0 : return new PrimaryFragment();
-              case 1 : return new SocialFragment();
-              case 2 : return new UpdatesFragment();
-          }
-        return null;
+            switch (position){
+                case 0 : return new DayOneFragment();
+                case 1 : return new DayTwoFragment();
+                case 2 : return new DayThreeFragment();
+            }
+            return null;
         }
 
         @Override
@@ -89,14 +91,17 @@ public class TabFragment extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "Primary";
+                    return "Day 1";
                 case 1 :
-                    return "Social";
+                    return "Day 2";
                 case 2 :
-                    return "Updates";
+                    return "Day 3";
             }
-                return null;
+            return null;
         }
     }
 
 }
+
+
+

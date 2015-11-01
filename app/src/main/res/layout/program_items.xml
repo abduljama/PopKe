@@ -1,0 +1,110 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_marginTop="7dp"
+    android:id="@+id/news_card" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="355dp"
+        android:layout_below="@+id/main_card"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="190dp"
+            android:src="@drawable/pope_francis"
+            android:scaleType="fitXY"
+            android:id="@+id/image" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#757575"
+
+            android:layout_alignBottom="@+id/image"
+            android:id="@+id/pTitle_main">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="6dp"
+            android:text="Holy Mass "
+            android:textColor="@color/windowBackground"
+            android:textSize="30dp"
+
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/pTitle" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="6dp"
+            android:id="@+id/program_desc"
+            android:textSize="16dp"
+            android:background="@color/windowBackground"
+            android:text="@string/program_one"
+            android:textStyle="bold"
+
+            android:layout_below="@+id/image"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="7dp"
+            android:layout_height="3dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/program_desc"
+            android:layout_alignLeft="@+id/pTitle_main"
+            android:layout_alignStart="@+id/pTitle_main"
+            android:id="@+id/view" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time : 08:00 - 10:00 AM "
+            android:textSize="12dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/time"
+            android:textStyle="bold"
+            android:layout_below="@+id/view"
+            android:layout_toLeftOf="@+id/pVenue"
+            android:layout_toStartOf="@+id/pVenue" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Venue : University of Nairobi "
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/pVenue"
+            android:layout_above="@+id/textView4"
+            android:layout_toRightOf="@+id/pTitle_main"
+            android:layout_toEndOf="@+id/pTitle_main" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Direction"
+            android:clickable="true"
+            android:layout_marginTop="7dp"
+            android:textColor="#0864f7"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/time"
+            android:layout_centerHorizontal="true"
+            android:textSize="14dp" />
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+
