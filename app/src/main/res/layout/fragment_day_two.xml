@@ -4,7 +4,7 @@
     tools:context="com.example.abdul.popeke.Program.DayTwoFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:paddingTop="10dp"
+        android:paddingTop="3dp"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:id="@+id/rv1"
