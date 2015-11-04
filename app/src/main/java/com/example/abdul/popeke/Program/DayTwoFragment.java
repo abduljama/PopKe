@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
 
 import com.example.abdul.popeke.Program.utils.ProgramAdapter;
 import com.example.abdul.popeke.Program.utils.ProgramItems;
@@ -15,6 +16,8 @@ import com.example.abdul.popeke.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,7 +43,8 @@ public class DayTwoFragment extends Fragment {
         recyclerView =(RecyclerView)rootView.findViewById(R.id.rv1);
         adapter =  new ProgramAdapter(getActivity() ,getData() );
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager( new LinearLayoutManager(getActivity()) );
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setItemAnimator(new SlideInUpAnimator(new OvershootInterpolator(1f)));
 
 
         return rootView;

@@ -1,6 +1,7 @@
 package com.example.abdul.popeke.Program.utils;
 
 import android.content.Context;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.MyViewHo
 
     public LayoutInflater inflater;
     private Context context;
+    FragmentManager mFragmentManager;
 
     List<ProgramItems> data =  Collections.emptyList();
 
@@ -43,6 +45,16 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.MyViewHo
         //      Log.d("Method two ", "OnBindViewHolder has been  Called ");
         ProgramItems current = data.get(position);
         holder.pTitle.setText(current.pTitle);
+      /*  holder.pDirection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fm= mFragmentManager.beginTransaction();
+              fm.replace(R.id.containerView,new MapsFragment()).commit();
+
+            }
+        });
+        */
+
         holder.pTime.setText("Time : "+ current.pTime);
         holder.location.setText("Venue :" + current.pLocation);
         holder.pDesc.setText(current.pDesc);
@@ -58,7 +70,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.MyViewHo
 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView location , pDesc , pTime ,pTitle;
+        TextView location , pDesc , pTime ,pTitle , pDirection;
         ImageView image;
 
 
@@ -67,6 +79,10 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.MyViewHo
 
             pTitle = (TextView)itemView.findViewById(R.id.pTitle);
             location = (TextView)itemView.findViewById(R.id.pVenue);
+
+            pDirection = (TextView)itemView.findViewById(R.id.showDirection);
+
+
 
             pDesc= (TextView)itemView.findViewById(R.id.program_desc);
 

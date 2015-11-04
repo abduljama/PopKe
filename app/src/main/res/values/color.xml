@@ -149,10 +149,10 @@
     <color name="LigthCoral">#f0a0a0</color>
 
 
-    <color name="colorPrimary">#ff5722</color>
-    <color name="colorPrimaryDark">#f4511e</color>
+    <color name="colorPrimary">#f44336</color>
+    <color name="colorPrimaryDark">#d32f2f</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
-    <color name="colorAccent">#ffab91</color>
+    <color name="colorAccent">#e57373</color>
 </resources>

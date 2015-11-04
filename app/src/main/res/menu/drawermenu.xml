@@ -5,7 +5,7 @@
     <item android:title="Donate"  android:icon="@drawable/bread23" android:id="@+id/nav_item_donate" ></item>
     <item android:title="Program" android:icon="@drawable/lists5" android:id="@+id/nav_item_program"></item>
     <item android:title="Media Feed" android:icon="@drawable/newspaper11" android:id="@+id/nav_item_media"></item>
-    <item android:title="Directions" android:icon="@drawable/pin56" android:id="@+id/nav_item_directions"></item>
+ <!--   <item android:title="Directions" android:icon="@drawable/pin56" android:id="@+id/nav_item_directions"></item> -->
 
 
 
@@ -18,7 +18,7 @@
                 android:title="Hymns" android:icon="@drawable/quaver3" android:id="@+id/nav_item_hymns"/>
         </menu>
     </item>
-
+<!---
     <item android:title="More">
         <menu>
             <item
@@ -27,10 +27,11 @@
                 android:title="Something Here" android:icon="@drawable/bin" android:id="@+id/nav_item_sth_here"/>
         </menu>
     </item>
+    -->
 
     <group android:id="@+id/others">
 
-        <item android:title="Settings" android:icon="@drawable/settings2" android:id="@+id/nav_item_settings"></item>
+      <!--  <item android:title="Settings" android:icon="@drawable/settings2" android:id="@+id/nav_item_settings"></item>-->
 
         <item android:title="About" android:icon="@drawable/info28" android:id="@+id/nav_item_about"></item>
     </group>
