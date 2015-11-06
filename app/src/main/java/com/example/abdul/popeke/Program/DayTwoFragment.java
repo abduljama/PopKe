@@ -53,7 +53,7 @@ public class DayTwoFragment extends Fragment {
         data = new ArrayList<>() ;
         //  List<ProgramItems> data = new ArrayList<>() ;
 
-        int [] icons = {R.drawable.mslm, R.drawable.mass_symbols , R.drawable.vargihna, R.drawable.uon};
+        int [] icons = {R.drawable.mslm, R.drawable.uon , R.drawable.bishops, R.drawable.vargihna};
 
         String [] desc = new String[]  {getString(R.string.program_one),getString(R.string.program_one),
                 getString(R.string.program_one),getString(R.string.program_one)};
