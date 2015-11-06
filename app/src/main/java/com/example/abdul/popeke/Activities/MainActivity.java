@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-     toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-    /**
+        /**
          *Setup the DrawerLayout and NavigationView
          */
 
@@ -119,16 +119,16 @@ public class MainActivity extends AppCompatActivity {
 
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                     xfragmentTransaction.replace(R.id.containerView,new RegisterFragment()).commit();
-                  //  addItemsToSpinner();
+                    //  addItemsToSpinner();
 
-                   /** if (toolbar != null) {
-                        setSupportActionBar(toolbar);
-                        getSupportActionBar().setDisplayShowTitleEnabled(false);
-                        getSupportActionBar().setHomeButtonEnabled(true);
+                    /** if (toolbar != null) {
+                     setSupportActionBar(toolbar);
+                     getSupportActionBar().setDisplayShowTitleEnabled(false);
+                     getSupportActionBar().setHomeButtonEnabled(true);
 
-                    }
-                    addItemsToSpinner();
-                    **/
+                     }
+                     addItemsToSpinner();
+                     **/
                 }
 
              /*   if (menuItem.getItemId() == R.id.nav_item_settings) {
