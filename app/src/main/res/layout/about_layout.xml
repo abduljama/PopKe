@@ -35,8 +35,15 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="iLabAfrica is a Centre of Excellence in ICT innovation and Development set up in January 2011. It is an inde­pend­ent entity in the Faculty of Information Technology at Strathmore University. It was established to address the Millennium Development Goals(MDGs) and to contribute toward Kenya’s Vision 2030. The research center is involved in interdisciplinary research, students engagement, collaboration with government, industry and other funding agencies."
+        android:textSize="19dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/imageView" />
 
 
 

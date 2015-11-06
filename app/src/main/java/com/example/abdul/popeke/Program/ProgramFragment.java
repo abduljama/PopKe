@@ -91,11 +91,11 @@ public class ProgramFragment extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "Day 1";
+                    return "Nov 25th";
                 case 1 :
-                    return "Day 2";
+                    return "Nov 26th";
                 case 2 :
-                    return "Day 3";
+                    return "Nov 27th";
             }
             return null;
         }

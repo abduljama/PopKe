@@ -24,6 +24,8 @@
         android:layout_height="wrap_content"
         android:text =" 1. SELECT Paybill from Mpesa Menu \n\n2.Enter the KCCB POPE'S VISIT  business number 405060 \n \n3.Enter Account Number : 1 \n \n4.Enter the amount you wish to  contribute. \n\n5.Enter your M-Pesa Pin. \n\n6.Confirm all the details \n\n7.You will  recieve a confirmation of the Transaction via SMS"
         android:textSize="19dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="10dp"
         android:textStyle="bold"
 
         android:id="@+id/textView4"

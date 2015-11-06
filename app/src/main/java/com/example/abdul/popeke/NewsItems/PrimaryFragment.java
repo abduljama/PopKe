@@ -18,8 +18,6 @@ import com.example.abdul.popeke.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
-
 /**
  * Created by Ratan on 7/29/2015.
  */
@@ -42,7 +40,7 @@ public class PrimaryFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-       recyclerView.setItemAnimator(new SlideInLeftAnimator());
+      // recyclerView.setItemAnimator(new SlideInLeftAnimator());
         //recyclerView.setItemAnimator(new SlideInUpAnimator(new OvershootInterpolator(1f));
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {

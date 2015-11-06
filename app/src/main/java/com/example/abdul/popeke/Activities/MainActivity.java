@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.example.abdul.popeke.AboutFragment;
 import com.example.abdul.popeke.DonateFragment;
-import com.example.abdul.popeke.HymnsFragment;
 import com.example.abdul.popeke.NewsItems.TabFragment;
 import com.example.abdul.popeke.PrayersFragment;
 import com.example.abdul.popeke.Program.ProgramFragment;
@@ -92,11 +91,14 @@ public class MainActivity extends AppCompatActivity {
                     xfragmentTransaction.replace(R.id.containerView,new GalleryFragment()).commit();
                 }
                 */
-                if (menuItem.getItemId() == R.id.nav_item_hymns) {
+
+/*                if (menuItem.getItemId() == R.id.nav_item_hymns) {
 
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                     xfragmentTransaction.replace(R.id.containerView,new HymnsFragment()).commit();
                 }
+
+                */
                /* if (menuItem.getItemId() == R.id.nav_item_directions) {
 
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
