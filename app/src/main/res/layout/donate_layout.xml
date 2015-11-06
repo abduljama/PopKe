@@ -8,36 +8,28 @@
 
 
     <ImageView
-    android:layout_width="270dp"
-    android:layout_height="270dp"
-    android:src ="@drawable/mpesa" android:layout_marginTop="47dp"
+    android:layout_width="fill_parent"
+    android:layout_height="120dp"
+    android:src ="@drawable/mpesa"
 
 
         android:id="@+id/imageView2"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "PAYBILL NO :  405060 "
-        android:textSize="30dp"
+        android:text =" 1. SELECT Paybill from Mpesa Menu \n\n2.Enter the KCCB POPE'S VISIT  business number 405060 \n \n3.Enter Account Number : 1 \n \n4.Enter the amount you wish to  contribute. \n\n5.Enter your M-Pesa Pin. \n\n6.Confirm all the details \n\n7.You will  recieve a confirmation of the Transaction via SMS"
+        android:textSize="19dp"
         android:textStyle="bold"
-        android:layout_marginTop="43dp"
+
         android:id="@+id/textView4"
         android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
-
-    <Button android:id="@+id/btn_donation"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Confirm Donation"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
