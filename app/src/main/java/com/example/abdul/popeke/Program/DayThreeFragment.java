@@ -54,7 +54,7 @@ public class DayThreeFragment extends Fragment {
         data = new ArrayList<>();
         //  List<ProgramItems> data = new ArrayList<>() ;
 
-        int[] icons = {R.drawable.uon, R.drawable.strathmore, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
+        int[] icons = {R.drawable.kg, R.drawable.kasarani, R.drawable.bishops, R.drawable.pope_francis};
 
         String[] desc = new String[]{getString(R.string.program_one), getString(R.string.program_one),
                 getString(R.string.program_one), getString(R.string.program_one)};
