@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,12 +37,12 @@ public class FaceBookFragment extends Fragment{
         View rootView =  inflater.inflate(R.layout.fragment_facebook, container, false);
 
 
-     //webView.setWebChromeClient(new MyWebChromeClient());
+        //webView.setWebChromeClient(new MyWebChromeClient());
         webView  = (WebView)rootView.findViewById(R.id.webView2);
         webView.getSettings().setJavaScriptEnabled(true);
 
 
-            String  url =  "https://www.facebook.com/PopeVisitsKenya/?fref=ts";
+        String  url =  "https://www.facebook.com/PopeVisitsKenya/?fref=ts";
 
         https://twitter.com/Pontifex
 
@@ -57,11 +58,55 @@ public class FaceBookFragment extends Fragment{
                 view.loadUrl(url);
                 return true;
             }
-                });
+        });
 
         webView.loadUrl("http://developer.android.com");
 
         webView.loadUrl(url);
+
+
+
+        webView.setOnKeyListener(new View.OnKeyListener()
+
+        {
+
+            @Override
+
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+
+            {
+
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+
+                {
+
+
+                    WebView webView = (WebView) v;
+                    switch (keyCode)
+
+                    {
+
+                        case KeyEvent.KEYCODE_BACK:
+
+                            if (webView.canGoBack())
+
+                            {
+
+                                webView.goBack();
+
+                                return true;
+
+                            }
+                            break;
+                    }
+                }
+                return false;
+
+            }
+
+        });
+
+
         return rootView;
     }
     public class MyWebChromeClient extends WebChromeClient {
@@ -73,8 +118,5 @@ public class FaceBookFragment extends Fragment{
             result.confirm();
             return true;
         }
-
-        ;
-
 
     }}
