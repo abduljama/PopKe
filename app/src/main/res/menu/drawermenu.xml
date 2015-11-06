@@ -9,13 +9,13 @@
 
 
 
-    <item android:title="Prayer">
+    <item android:title="Prayers &amp; Hymns">
 
         <menu>
             <item
-                android:title="Pope's Prayer" android:icon="@drawable/prayers" android:id="@+id/nav_item_prayers"/>
-          <!--  <item
-                android:title="Hymns" android:icon="@drawable/quaver3" android:id="@+id/nav_item_hymns"/> -->
+                android:title="Daily Prayers" android:icon="@drawable/prayers" android:id="@+id/nav_item_prayers"/>
+            <item
+                android:title="Hymns" android:icon="@drawable/quaver3" android:id="@+id/nav_item_hymns"/>
         </menu>
     </item>
 <!---
