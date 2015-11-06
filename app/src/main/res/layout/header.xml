@@ -2,37 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="190dp"
-    android:background="@drawable/pope_francis"
+
     android:orientation="vertical"
     android:layout_marginBottom="10dp"
     >
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/header"
+        android:scaleType="fitXY"/>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome To Kenya"
-        android:id="@+id/email"
-        android:gravity="left"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="80dp"
-        android:textSize="20sp"
-        android:textColor="#111111"
-        android:layout_alignParentBottom="true"
-      />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Karibu Kenya"
-        android:textSize="18dp"
-        android:textStyle="italic"
-        android:id="@+id/textView3"
-        android:layout_alignTop="@+id/email"
-        android:layout_alignLeft="@+id/email"
-        android:layout_alignStart="@+id/email"
-        android:layout_marginTop="38dp" />
 
 
 </RelativeLayout>

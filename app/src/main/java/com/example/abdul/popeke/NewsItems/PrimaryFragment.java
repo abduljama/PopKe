@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.abdul.popeke.NewsItems.utils.HandleXml;
 import com.example.abdul.popeke.NewsItems.utils.NewsAdapter;
 import com.example.abdul.popeke.NewsItems.utils.NewsInfo;
 import com.example.abdul.popeke.R;
@@ -27,6 +28,10 @@ public class PrimaryFragment extends Fragment {
     RecyclerView recyclerView;
     NewsAdapter adapter;
     private List<NewsInfo> data;
+    private HandleXml obj;
+    private String finalUrl="http://www.radiovaticana.va/rss/rss.xml";
+
+
 
     @Nullable
     @Override
@@ -67,14 +72,24 @@ public class PrimaryFragment extends Fragment {
         data = new ArrayList<>() ;
         //  List<ProgramItems> data = new ArrayList<>() ;
 
-        int [] icons = {R.drawable.strathmore, R.drawable.strathmore , R.drawable.pope_francis, R.drawable.pope_francis};
+         int size = 10  ;
+        String []  title = new  String [size];
+        int [] icons = new int [size] ;
+        String [] desc = new String[size];
+        obj = new HandleXml(finalUrl);
+        obj.fetchXML();
 
-        String [] desc = new String[]  {getString(R.string.program_one),getString(R.string.program_one),
-                getString(R.string.program_one),getString(R.string.program_one)};
 
-        String []  title =  getResources().getStringArray(R.array.title_array);
+        while(obj.parsingComplete){
 
+            for( int i = 0 ;  i< title.length && i <icons.length ; i++){
+                title[i] = obj.getTitle();
+                desc[i] = obj.getDescription();
+                icons[i]= R.drawable.pope_francis;
+                size++;
+            }
 
+        }
         for ( int  i  = 0 ;  i < icons.length  && i < desc.length; i++ ) {
            NewsInfo current  =  new NewsInfo() ;
             current.image = icons[i];

@@ -5,64 +5,16 @@
 
     tools:context="com.example.abdul.popeke.Activities.SplashScreen">
 
-
-
     <ImageView
-        android:id="@+id/imgLogo"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:src="@drawable/pope_francis"
+        android:src="@drawable/splashscreen"
         android:scaleType="fitXY"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentBottom="true" />
 
 
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/coa"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_marginTop="40dp" />
 
-
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Welcome  to Kenya "
-       android:textSize="30dp"
-       android:textStyle="bold"
-       android:layout_marginLeft="10dp"
-       android:id="@+id/textView2"
-       android:layout_above="@+id/textView3"
-       android:layout_alignParentLeft="true"
-       android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Karibu Kenya"
-        android:textSize="25dp"
-        android:layout_marginLeft="55dp"
-        android:textStyle="italic"
-        android:layout_marginStart="55dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView3" />
-
-
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/ilab"
-
-        android:id="@+id/imageView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
 </RelativeLayout>

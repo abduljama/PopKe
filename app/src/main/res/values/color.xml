@@ -150,6 +150,7 @@
 
 
     <color name="colorPrimary">#f44336</color>
+    <color name="colorTile">#40f44336</color>
     <color name="colorPrimaryDark">#d32f2f</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
