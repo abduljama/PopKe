@@ -85,17 +85,17 @@ public class PrimaryFragment extends Fragment {
 
             for (int i = 0; i < title.length ; i++) {
                 title[i] = obj.getTitle();
-                System.out.println(title[i]);
+
                 desc[i] = obj.getDescription();
                 icons[i] = R.drawable.pope_francis;
                 size++;
             }
         }
-        System.out.print("value is ");
-        for ( int  i  = 0 ;   i < desc.length; i+=30 ) {
-            System.out.print("value is "+Integer.toString(i));
+
+        for ( int  i  = 0 ;   i < desc.length; i++ ) {
+
             NewsInfo current = new NewsInfo();
-          //  current.image = icons[i];
+           current.image = icons[i];
             current.title = title[i];
             current.content = desc[i];
 

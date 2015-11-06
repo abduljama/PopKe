@@ -16,7 +16,7 @@ import com.example.abdul.popeke.R;
 public class HolyMassFragment extends Fragment {
 
     WebView webView;
-    String  url =  "https://docs.google.com/forms/d/1gexGCxic86MH2VS09gpHIT8veQ0vwHlTSDjH2aGiWlA/viewform?c=0&w=1";
+    String  url =  "https://docs.google.com/forms/d/1sOXcyn59vtCOG3mVYU2OKWA4YGJzV1f9l_gVU6bYvGU/viewform";
 
 
     public HolyMassFragment() {

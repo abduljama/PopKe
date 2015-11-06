@@ -91,9 +91,9 @@ public class RegisterFragment extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "Youth ";
-                case 1 :
                     return "Holy Mass";
+                case 1 :
+                    return "Youth";
 
             }
             return null;

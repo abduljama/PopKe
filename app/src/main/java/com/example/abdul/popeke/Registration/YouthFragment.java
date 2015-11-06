@@ -15,7 +15,7 @@ import com.example.abdul.popeke.R;
  */
 public class YouthFragment extends Fragment {
     WebView  webView;
-String  url =  "https://docs.google.com/forms/d/1Foa_yHq9vCw6QFhmzHOzhO539_gtrXZKAXgXO8LzXzs/viewform?edit_requested=true";
+String  url =  "https://docs.google.com/forms/d/1u2xOdVs6oB8KxGTyCXYd8Hzi4c2JkKrfUb9LshPLvDk/viewform";
 
     public YouthFragment() {
         // Required empty public constructor
