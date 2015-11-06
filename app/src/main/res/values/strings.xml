@@ -11,27 +11,87 @@
 
 
         <string-array name="title_array">
-            <item>Holy Mass</item>
-            <item> Dummy Title </item>
-            <item> Dummy Title  </item>
-            <item> Dummy Title   </item>
+           <item>Departure from Rome</item>
+<item>Arrival.</item>
+<item>Welcome Ceremony</item>
+<item>Courtesy Call &amp; Discussions with the President</item>
+<item>Meeting with Kenyan Authorities and Members of the Diplomatic Corp.</item>
+
+
+
         </string-array>
 
 
         <string-array name="venue_array">
-            <item>University of Nairobi</item>
-            <item> Dummy Title  </item>
-            <item>  Dummy Title   </item>
-            <item> Dummy Location </item>
-        </string-array>
 
+            <item>Fiumicino airport</item>
+            <item>Jomo Kenyatta International Airport Nairobi </item>
+            <item>  State House, Nairobi </item>
+            <item>  State House, Nairobi. </item>
+            <item>  State House, Nairobi. </item>
+        </string-array>
 
 
         <string-array name="time_array">
-            <item>08:00 - 10:00 AM </item>
-            <item>12:00 - 1:00  PM  </item>
-            <item>03:00 - 4:00  PM  </item>
-            <item>05:00 - 07:00 PM  </item>
+            <item>07:45:00 - 17:00:00</item>
+            <item>17:00:00 - 18:00:00</item>
+            <item>18:00:00 - 18:30:00</item>
+            <item>18:30:00</item>
         </string-array>
+
+
+    <string-array name="title_array2">
+    <item>Interiligous and Ecumenical Meeting</item>
+    <item>Public Mass</item>
+    <item>Meeting with clergy, Priest, Nuns and seminarists</item>
+    <item>Visit</item>
+    </string-array>
+
+    <string-array name="venue_array2">
+
+
+        <item>Apostolic Nunciature, Nairobi </item>
+        <item>University of Nairobi</item>
+        <item>St. Mary’s School Nairobi, Sports grounds.</item>
+        <item>UNEP/UNON</item>
+    </string-array>
+
+
+    <string-array name="time_array2">
+        <item>08:15:00 – 10:00:00</item>
+        <item>10:00:00 – 15:45:00</item>
+        <item>15:45:00 – 17:30:00</item>
+        <item>17:30:00</item>
+    </string-array>
+
+
+
+    <string-array name="title_array3">
+    <item>Visit</item>
+    <item>Meeting with the Youth of Kenya</item>
+    <item>MEETING WITH KENYAN BISHOPS (Kenya Conference of Catholic Bishops)</item>
+    <item>FAREWELL CEREMONY</item>
+    <item>Departure for Entebbe International airport in Entebbe, Uganda.</item>
+    </string-array>
+
+    <string-array name="venue_array3">
+
+
+        <item>Kangemi Slum, Nairobi</item>
+        <item>Kasarani Stadium, Nairobi</item>
+        <item>VIP lounge at Kasarani Stadium</item>
+        <item>Jomo Kenyatta International Airport</item>
+        <item>Jomo Kenyatta International Airport</item>
+    </string-array>
+
+
+
+
+    <string-array name="time_array3">
+        <item>08:30:00 – 10:00:00</item>
+        <item>10:00:00 – 11:15:00</item>
+        <item>15:10:00 – 15:30:00</item>
+        <item>15:30:00</item>
+    </string-array>
 
 </resources>
