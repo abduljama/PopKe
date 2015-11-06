@@ -56,7 +56,8 @@ public class DayOneFragment extends Fragment {
           data = new ArrayList<>() ;
       //  List<ProgramItems> data = new ArrayList<>() ;
 
-        int [] icons = {R.drawable.uon, R.drawable.strathmore , R.drawable.pope_francis, R.drawable.pope_francis};
+        int [] icons = {R.drawable.uon, R.drawable.strathmore , R.drawable.pope_francis, R.drawable.statehouse};
+
 
         String [] desc = new String[]  {getString(R.string.program_one),getString(R.string.program_one),
                 getString(R.string.program_one),getString(R.string.program_one)};
