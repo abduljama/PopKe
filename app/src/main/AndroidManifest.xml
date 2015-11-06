@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.abdul.popeke" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +14,7 @@
 
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Activities.SplashScreen"
+            android:name=".Twitter.Main.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +22,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="CONSUMER_KEY"
+            android:value="isuic2kqIJEBI0m4CeGVxBjBL" />
+        <meta-data
+            android:name="CONSUMER_SECRET"
+            android:value="vf5HIqiuYeLxoNgsu8jvRanYEV1sRfxQesVha6siiTd0nGNR7G" />
         <activity
-            android:name=".Activities.MainActivity" >
+            android:name=".Activities.SplashScreen" >
+        </activity>
+        <activity
+            android:name=".Twitter.Main.Onboarding"
+            android:screenOrientation="portrait"
+            >
         </activity>
 
     </application>
