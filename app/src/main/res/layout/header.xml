@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:src="@drawable/header"
+        android:src="@drawable/papalvisit2"
         android:scaleType="fitXY"/>
 
 

@@ -29,7 +29,7 @@ public class PrimaryFragment extends Fragment {
     NewsAdapter adapter;
     private List<NewsInfo> data;
     private HandleXml obj;
-    private String finalUrl="http://www.radiovaticana.va/rss/rss.xml";
+    private String finalUrl="http://www.catholicnews.com/rss/cns-top-story.xml";
 
 
 
@@ -80,26 +80,31 @@ public class PrimaryFragment extends Fragment {
         obj.fetchXML();
 
 
-        while(obj.parsingComplete){
 
-            for( int i = 0 ;  i< title.length && i <icons.length ; i++){
+        while(obj.parsingComplete) {
+
+            for (int i = 0; i < title.length ; i++) {
                 title[i] = obj.getTitle();
+                System.out.println(title[i]);
                 desc[i] = obj.getDescription();
-                icons[i]= R.drawable.pope_francis;
+                icons[i] = R.drawable.pope_francis;
                 size++;
             }
-
         }
-        for ( int  i  = 0 ;  i < icons.length  && i < desc.length; i++ ) {
-           NewsInfo current  =  new NewsInfo() ;
-            current.image = icons[i];
+        System.out.print("value is ");
+        for ( int  i  = 0 ;   i < desc.length; i+=30 ) {
+            System.out.print("value is "+Integer.toString(i));
+            NewsInfo current = new NewsInfo();
+          //  current.image = icons[i];
             current.title = title[i];
-            current.content= desc[i];
+            current.content = desc[i];
 
             data.add(current);
 
 
         }
+       // System.out.print(Arrays.toString(title)+"\n");
+      //  System.out.print((desc.length) + "\n");
         return data;
         // return data;
     }
