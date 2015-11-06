@@ -1,9 +1,7 @@
 package com.example.abdul.popeke.Twitter.Main;
 
-/**
- * Created by Neel Raj on 23-08-2015.
- */
+
 public class Authenticated {
-    String token_type;
-    String access_token;
+    public String token_type;
+    public String access_token;
 }
