@@ -63,12 +63,14 @@ public class DayOneFragment extends Fragment {
 
         String []  title =  getResources().getStringArray(R.array.title_array);
         String []  time  =  getResources().getStringArray(R.array.time_array);
+        String []  venue  =  getResources().getStringArray(R.array.venue_array);
 
         for ( int  i  = 0 ;  i < icons.length  && i < desc.length; i++ ) {
             ProgramItems    current  =  new ProgramItems() ;
             current.pImage = icons[i];
-            current.pDesc = desc[i];
             current.pTitle= title[i];
+            current.pLocation = venue[i];
+
             current.pTime =  time[i];
             data.add(current);
 

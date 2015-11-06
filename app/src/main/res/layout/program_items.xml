@@ -5,10 +5,11 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="355dp"
+        android:layout_height="230dp"
         android:layout_below="@+id/main_card"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        >
 
         <ImageView
             android:layout_width="fill_parent"
@@ -46,6 +47,7 @@
             android:layout_marginTop="6dp"
             android:id="@+id/program_desc"
             android:textSize="16dp"
+            android:visibility="invisible"
 
             android:background="@color/windowBackground"
             android:text="@string/program_one"
@@ -53,29 +55,8 @@
 
             android:layout_below="@+id/image"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginTop="7dp"
-            android:layout_height="3dp"
-            android:background="@android:color/darker_gray"
-            android:layout_below="@+id/program_desc"
-            android:layout_alignLeft="@+id/pTitle_main"
-            android:layout_alignStart="@+id/pTitle_main"
-            android:id="@+id/view" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Time : 08:00 - 10:00 AM "
-            android:textSize="12dp"
-            android:id="@+id/time"
-            android:textStyle="bold"
-            android:layout_below="@+id/view"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/time" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,21 +65,36 @@
             android:textStyle="bold"
             android:textSize="12dp"
             android:id="@+id/pVenue"
-            android:layout_below="@+id/view"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_below="@+id/image"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Show Direction"
-            android:clickable="true"
-            android:layout_marginTop="7dp"
-            android:textColor="#0864f7"
-            android:id="@+id/showDirection"
-            android:layout_below="@+id/time"
-            android:layout_centerHorizontal="true"
-            android:textSize="14dp" />
+            android:text="Time : 08:00 - 10:00 AM "
+            android:textSize="12dp"
+            android:id="@+id/time"
+            android:textStyle="bold"
+            android:layout_below="@+id/pVenue"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            />
+
+
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Show Direction"-->
+            <!--android:clickable="true"-->
+            <!--android:layout_marginTop="7dp"-->
+            <!--android:textColor="#0864f7"-->
+            <!--android:id="@+id/showDirection"-->
+            <!--android:layout_below="@+id/time"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:textSize="14dp" />-->
 
 
     </RelativeLayout>
