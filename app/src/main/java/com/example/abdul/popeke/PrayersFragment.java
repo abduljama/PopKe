@@ -1,8 +1,7 @@
 package com.example.abdul.popeke;
 
-import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -11,10 +10,6 @@ import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
-
-import com.example.abdul.popeke.Activities.MainActivity;
-import com.example.abdul.popeke.R;
 
 /**
  * Created by kiprop on 11/6/15.
@@ -34,7 +29,7 @@ public class PrayersFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.fragment_facebook, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_prayers, container, false);
 
 
         //webView.setWebChromeClient(new MyWebChromeClient());

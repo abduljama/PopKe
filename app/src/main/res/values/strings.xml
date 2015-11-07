@@ -12,10 +12,10 @@
 
         <string-array name="title_array">
            <item>Departure from Rome</item>
-<item>Arrival.</item>
-<item>Welcome Ceremony</item>
-<item>Courtesy Call &amp; Discussions with the President</item>
-<item>Meeting with Kenyan Authorities and Members of the Diplomatic Corp.</item>
+            <item>Arrival.</item>
+            <item>Welcome Ceremony</item>
+            <item>Courtesy Call &amp; Discussions with the President</item>
+            <item>Meeting with Kenyan Authorities </item>
 
 
 
@@ -25,25 +25,25 @@
         <string-array name="venue_array">
 
             <item>Fiumicino airport</item>
-            <item>Jomo Kenyatta International Airport Nairobi </item>
-            <item>  State House, Nairobi </item>
-            <item>  State House, Nairobi. </item>
-            <item>  State House, Nairobi. </item>
+            <item>JKIA  Nairobi </item>
+            <item>State House, Nairobi</item>
+            <item>State House, Nairobi</item>
+            <item>State House, Nairobi</item>
         </string-array>
 
 
         <string-array name="time_array">
-            <item>07:45:00 - 17:00:00</item>
-            <item>17:00:00 - 18:00:00</item>
-            <item>18:00:00 - 18:30:00</item>
-            <item>18:30:00</item>
+            <item>07:45 - 17:00</item>
+            <item>17:00 - 18:00</item>
+            <item>18:00 - 18:30</item>
+            <item>18:30</item>
         </string-array>
 
 
     <string-array name="title_array2">
-    <item>Interiligous and Ecumenical Meeting</item>
+    <item>Inter-religous and Ecumenical Meeting</item>
     <item>Public Mass</item>
-    <item>Meeting with clergy, Priest, Nuns and seminarists</item>
+    <item>Meeting with clergy, Priest, Nuns &amp; seminarists</item>
     <item>Visit</item>
     </string-array>
 
@@ -52,26 +52,26 @@
 
         <item>Apostolic Nunciature, Nairobi </item>
         <item>University of Nairobi</item>
-        <item>St. Mary’s School Nairobi, Sports grounds.</item>
+        <item>St. Mary’s School Nairobi</item>
         <item>UNEP/UNON</item>
     </string-array>
 
 
     <string-array name="time_array2">
-        <item>08:15:00 – 10:00:00</item>
-        <item>10:00:00 – 15:45:00</item>
-        <item>15:45:00 – 17:30:00</item>
-        <item>17:30:00</item>
+        <item>08:15 – 10:00</item>
+        <item>10:00 – 15:45</item>
+        <item>15:45 – 17:30</item>
+        <item>17:30</item>
     </string-array>
 
 
 
     <string-array name="title_array3">
     <item>Visit to Kangemi Slum </item>
-    <item>Meeting with the Youth of Kenya</item>
-    <item>MEETING WITH KENYAN BISHOPS (Kenya Conference of Catholic Bishops)</item>
+    <item>Meeting with the Youth </item>
+    <item>MEETING WITH Kenya Conference of Catholic Bishops)</item>
     <item>FAREWELL CEREMONY</item>
-    <item>Departure for Entebbe International airport in Entebbe, Uganda.</item>
+    <item>Departure for Entebbe, Uganda.</item>
     </string-array>
 
     <string-array name="venue_array3">
@@ -88,10 +88,10 @@
 
 
     <string-array name="time_array3">
-        <item>08:30:00 – 10:00:00</item>
-        <item>10:00:00 – 11:15:00</item>
-        <item>15:10:00 – 15:30:00</item>
-        <item>15:30:00</item>
+        <item>08:30 – 10:00</item>
+        <item>10:00 – 11:15</item>
+        <item>15:10 – 15:30</item>
+        <item>15:30</item>
     </string-array>
 
 </resources>

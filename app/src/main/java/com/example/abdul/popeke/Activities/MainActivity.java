@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.example.abdul.popeke.AboutFragment;
 import com.example.abdul.popeke.DonateFragment;
-import com.example.abdul.popeke.HymnsFragment;
 import com.example.abdul.popeke.NewsItems.TabFragment;
 import com.example.abdul.popeke.PrayersFragment;
 import com.example.abdul.popeke.Program.ProgramFragment;
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle(R.string.app_name);
 
         /**
          *Setup the DrawerLayout and NavigationView

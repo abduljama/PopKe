@@ -35,7 +35,7 @@
 
 
         <item
-            android:title="Prayer of the Pope" android:icon="@drawable/prayers" android:id="@+id/nav_item_prayers"/>
+            android:title="Prayer for the Pope" android:icon="@drawable/prayers" android:id="@+id/nav_item_prayers"/>
         <item android:title="About" android:icon="@drawable/info28" android:id="@+id/nav_item_about"></item>
     </group>
 

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "ke.co.ilab"
-        minSdkVersion 10
+        minSdkVersion 12
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"

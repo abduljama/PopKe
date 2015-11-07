@@ -1,8 +1,11 @@
 package com.example.abdul.popeke.NewsItems;
 
-import android.content.Context;
-import android.support.v4.app.Fragment;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -11,9 +14,8 @@ import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
-import com.example.abdul.popeke.Activities.MainActivity;
 import com.example.abdul.popeke.R;
 
 /**
@@ -21,7 +23,9 @@ import com.example.abdul.popeke.R;
  */
 public class FaceBookFragment extends Fragment{
     WebView webView;
-    String  url =  "http://m.facebook.com/";
+    String  url1 =  "http://m.facebook.com/";
+    private ProgressBar progress;
+    CoordinatorLayout coordinatorLayout;
 
 
 
@@ -39,6 +43,9 @@ public class FaceBookFragment extends Fragment{
 
         //webView.setWebChromeClient(new MyWebChromeClient());
         webView  = (WebView)rootView.findViewById(R.id.webView2);
+        progress = (ProgressBar)rootView.findViewById(R.id.progressBar);
+        progress.setVisibility(View.GONE);
+        coordinatorLayout = (CoordinatorLayout)rootView.findViewById(R.id.coordinatorLayout);
         webView.getSettings().setJavaScriptEnabled(true);
 
 
@@ -49,15 +56,44 @@ public class FaceBookFragment extends Fragment{
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                // Handle the error
-            }
-
-            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
             }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                progress.setVisibility(View.GONE);
+                progress.setProgress(100);
+
+                super.onPageFinished(view, url);
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                progress.setVisibility(View.VISIBLE);
+                progress.setProgress(0);
+                super.onPageStarted(view, url, favicon);
+            }
+
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                view.loadUrl("about:blank");
+                Snackbar snackbar = Snackbar
+                        .make(coordinatorLayout, "Failed to Load Page", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("RETRY", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                webView.loadUrl(url1);
+                            }
+                        });
+
+// Changing message text color
+                snackbar.setActionTextColor(Color.RED);
+                snackbar.show();
+
+            }
+
+
         });
 
         webView.loadUrl("http://developer.android.com");
@@ -105,7 +141,11 @@ public class FaceBookFragment extends Fragment{
             }
 
         });
+   //     webView.getSettings().setJavaScriptEnabled(true);
+        progress.setVisibility(View.GONE);
 
+
+      //  webView.loadUrl(url);
 
         return rootView;
     }

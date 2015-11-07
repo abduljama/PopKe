@@ -1,6 +1,10 @@
 package com.example.abdul.popeke.NewsItems;
 
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -10,6 +14,7 @@ import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.example.abdul.popeke.R;
 
@@ -18,6 +23,8 @@ import com.example.abdul.popeke.R;
  */
 public class TwitterFragment extends Fragment{
     WebView webView;
+    CoordinatorLayout  coordinatorLayout;
+    ProgressBar  progress;
     String  url =  "https://twitter.com/@popeinkenya";
 
 
@@ -35,31 +42,64 @@ public class TwitterFragment extends Fragment{
 
 
      //webView.setWebChromeClient(new MyWebChromeClient());
+
+        coordinatorLayout =  (CoordinatorLayout)rootView.findViewById(R.id.coordinatorLayout);
+        progress =(ProgressBar)rootView.findViewById(R.id.progressBar);
         webView  = (WebView)rootView.findViewById(R.id.webView3);
+        progress.setVisibility(View.GONE);
         webView.getSettings().setJavaScriptEnabled(true);
 
 
-            String  url =  "https://twitter.com/@popeinkenya";
+            String  url1 =  "https://twitter.com/@popeinkenya";
 
         https://twitter.com/Pontifex
 
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                // Handle the error
-            }
-
-            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
             }
-                });
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                progress.setVisibility(View.GONE);
+                progress.setProgress(100);
+
+                super.onPageFinished(view, url);
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                progress.setVisibility(View.VISIBLE);
+                progress.setProgress(0);
+                super.onPageStarted(view, url, favicon);
+            }
+
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                view.loadUrl("about:blank");
+                Snackbar snackbar = Snackbar
+                        .make(coordinatorLayout, "Failed to Load Page", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("RETRY", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                webView.loadUrl(url);
+                            }
+                        });
+
+// Changing message text color
+                snackbar.setActionTextColor(Color.RED);
+                snackbar.show();
+
+            }
+
+
+        });
 
         webView.loadUrl("http://developer.android.com");
 
-        webView.loadUrl(url);
+        webView.loadUrl(url1);
 
 
         webView.setOnKeyListener(new View.OnKeyListener()

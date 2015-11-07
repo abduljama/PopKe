@@ -81,6 +81,7 @@ public class HolyMassFragment extends Fragment {
 
 // Changing message text color
                 snackbar.setActionTextColor(Color.RED);
+                snackbar.show();
 
             }
 
