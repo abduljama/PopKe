@@ -69,15 +69,15 @@
     <string-array name="title_array3">
     <item>Visit to Kangemi Slum </item>
     <item>Meeting with the Youth </item>
-    <item>MEETING WITH Kenya Conference of Catholic Bishops)</item>
-    <item>FAREWELL CEREMONY</item>
+    <item>Meeting with Kenya Conference of Catholic Bishops</item>
+    <item>Farewell Ceremony</item>
     <item>Departure for Entebbe, Uganda.</item>
     </string-array>
 
     <string-array name="venue_array3">
 
 
-        <item>Kangemi Slum, Nairobi</item>
+        <item>Kangemi , Nairobi</item>
         <item>Kasarani Stadium, Nairobi</item>
         <item>VIP lounge at Kasarani Stadium</item>
         <item>Jomo Kenyatta International Airport</item>
