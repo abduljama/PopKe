@@ -12,6 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.abdul.popeke.R;
+import com.example.abdul.popeke.YouTube.YouTubeRecyclerViewFragment;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.services.youtube.YouTube;
 
 /**
  * Created by Ratan on 7/27/2015.
@@ -20,11 +25,26 @@ public class TabFragment extends Fragment {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
-    public static int int_items = 2 ;
+    public static int int_items = 3 ;
+
+
+ 
+    //youtube stuff
+
+    private static final String YOUTUBE_PLAYLIST = "PLwHV_QFJijrxibV2k5SyrEYan0I42MaCi";
+    private YouTube mYoutubeDataApi;
+    private final GsonFactory mJsonFactory = new GsonFactory();
+    private final HttpTransport mTransport = AndroidHttp.newCompatibleTransport();
+
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        mYoutubeDataApi = new YouTube.Builder(mTransport, mJsonFactory, null)
+                .setApplicationName(getResources().getString(R.string.app_name))
+                .build();
         /**
          *Inflate tab_layout and setup Views.
          */
@@ -70,7 +90,7 @@ public class TabFragment extends Fragment {
           switch (position){
               case 0 : return new FaceBookFragment();
               case 1 : return new TwitterFragment();
-              //case 2 : return new UpdatesFragment();
+              case 2 : return new YouTubeRecyclerViewFragment().newInstance(mYoutubeDataApi, YOUTUBE_PLAYLIST);
           }
         return null;
         }
@@ -94,6 +114,8 @@ public class TabFragment extends Fragment {
                     return "Facebook";
                 case 1 :
                     return "Twitter";
+                case 2 :
+                    return "YouTube";
 
             }
                 return null;

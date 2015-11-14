@@ -71,7 +71,7 @@ public class HolyMassFragment extends Fragment {
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 view.loadUrl("about:blank");
                 Snackbar snackbar = Snackbar
-                        .make(coordinatorLayout, "Failed to Load Page", Snackbar.LENGTH_LONG)
+                        .make(getView(), "No Internet Connection", Snackbar.LENGTH_LONG)
                         .setAction("RETRY", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
