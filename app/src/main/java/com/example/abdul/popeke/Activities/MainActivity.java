@@ -32,6 +32,7 @@ import com.example.abdul.popeke.PrayersFragment;
 import com.example.abdul.popeke.Program.ProgramFragment;
 import com.example.abdul.popeke.R;
 import com.example.abdul.popeke.Registration.RegisterFragment;
+import com.example.abdul.popeke.SupportWithTheRosaryFragment;
 import com.example.abdul.popeke.YouTube.YouTubeRecyclerViewFragment;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpTransport;
@@ -163,6 +164,23 @@ public class MainActivity extends AppCompatActivity {
                      addItemsToSpinner();
                      **/
                     toolbar.setTitle("Register");
+                }
+                if (menuItem.getItemId() == R.id.nav_item_support_pope) {
+
+
+                    FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+                    xfragmentTransaction.replace(R.id.containerView, new SupportWithTheRosaryFragment()).commit();
+                    //  addItemsToSpinner();
+
+                    /** if (toolbar != null) {
+                     setSupportActionBar(toolbar);
+                     getSupportActionBar().setDisplayShowTitleEnabled(false);
+                     getSupportActionBar().setHomeButtonEnabled(true);
+
+                     }
+                     addItemsToSpinner();
+                     **/
+                    toolbar.setTitle("Pray The Rosary");
                 }
 
              /*   if (menuItem.getItemId() == R.id.nav_item_settings) {

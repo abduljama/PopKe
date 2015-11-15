@@ -128,7 +128,7 @@ View view;
 
         // Adding child data
         List<String> daily_prayers = new ArrayList<String>();
-
+        daily_prayers.add("");
         daily_prayers.add("Prayer of The Pope");
         daily_prayers.add("Sign of The Cross");
         daily_prayers.add("The Apostles Creed");

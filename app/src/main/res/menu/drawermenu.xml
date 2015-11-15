@@ -18,4 +18,6 @@
         </item>
 
     --><group android:id="@+id/others"><!--  <item android:title="Settings" android:icon="@drawable/settings2" android:id="@+id/nav_item_settings"></item>
---><item android:title="Prayers" android:icon="@drawable/prayers" android:id="@+id/nav_item_prayers"/><item android:title="About" android:icon="@drawable/info28" android:id="@+id/nav_item_about"/></group></menu>
+--><item android:title="Prayers" android:icon="@drawable/prayers" android:id="@+id/nav_item_prayers"/>
+        <item android:title="Support The Pope" android:icon="@drawable/christian30" android:id="@+id/nav_item_support_pope"/>
+        <item android:title="About" android:icon="@drawable/info28" android:id="@+id/nav_item_about"/></group></menu>
