@@ -21,7 +21,7 @@ import com.google.api.services.youtube.YouTube;
 /**
  * Created by Ratan on 7/27/2015.
  */
-public class TabFragment extends Fragment {
+public class MediaFeedTabView extends Fragment {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
@@ -30,6 +30,9 @@ public class TabFragment extends Fragment {
 
  
     //youtube stuff
+
+
+    //thsi playlist is from korir254@gmail youtube account
 
     private static final String YOUTUBE_PLAYLIST = "PLwHV_QFJijrxibV2k5SyrEYan0I42MaCi";
     private YouTube mYoutubeDataApi;

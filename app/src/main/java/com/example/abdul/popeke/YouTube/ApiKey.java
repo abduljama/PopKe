@@ -14,6 +14,9 @@ package com.example.abdul.popeke.YouTube;
  * limitations under the License.
  */
 public class ApiKey {
+
+    // api key from korir254@gmail.com dev console
+    //its an open browser key
     public static final String YOUTUBE_API_KEY = " AIzaSyAycPdfccs9Q3-vSusmJ15506yqODMghbg ";
 
 }

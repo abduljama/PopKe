@@ -1,97 +1,102 @@
 <resources>
-    <string name="app_name">PopeVisitKe</string>
+  <string name="app_name">PopeVisitKe</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+  <string name="hello_world">Hello world!</string>
+  <string name="action_settings">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="program_one">Lorem ipsum dolor sit amet, vero munere accusata pri ei, cu sea purto veniam eloquentiam, fugit vocibus ea vis. Postea mollis prodesset eu per, ut sit fabulas detracto sententiae. Per idque aliquam lucilius te, semper nostro offendit his ad, nam in velit appareat mnesarchum.,</string>
-
-
-
-        <string-array name="title_array">
-           <item>Departure from Rome</item>
-            <item>Arrival.</item>
-            <item>Welcome Ceremony</item>
-            <item>Courtesy Call &amp; Discussions with the President</item>
-            <item>Meeting with Kenyan Authorities </item>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="program_one">Lorem ipsum dolor sit amet, vero munere accusata pri ei, cu sea purto veniam eloquentiam, fugit vocibus ea vis. Postea mollis prodesset eu per, ut sit fabulas detracto sententiae. Per idque aliquam lucilius te, semper nostro offendit his ad, nam in velit appareat mnesarchum.,</string>
 
 
 
-        </string-array>
+  <string-array name="title_array">
+    <item>Departure from Rome</item>
+    <item>Arrival.</item>
+    <item>Welcome Ceremony</item>
+    <item>Courtesy Call &amp; Discussions with the President</item>
+    <item>Meeting with Kenyan Authorities </item>
 
 
-        <string-array name="venue_array">
 
-            <item>Fiumicino airport</item>
-            <item>JKIA  Nairobi </item>
-            <item>State House, Nairobi</item>
-            <item>State House, Nairobi</item>
-            <item>State House, Nairobi</item>
-        </string-array>
+  </string-array>
 
 
-        <string-array name="time_array">
-            <item>07:45 - 17:00</item>
-            <item>17:00 - 18:00</item>
-            <item>18:00 - 18:30</item>
-            <item>18:30</item>
-        </string-array>
+  <string-array name="venue_array">
+
+    <item>Fiumicino airport</item>
+    <item>JKIA  Nairobi </item>
+    <item>State House, Nairobi</item>
+    <item>State House, Nairobi</item>
+    <item>State House, Nairobi</item>
+  </string-array>
 
 
-    <string-array name="title_array2">
+  <string-array name="time_array">
+    <item>07:45 - 17:00</item>
+    <item>17:00 - 18:00</item>
+    <item>18:00 - 18:30</item>
+    <item>18:30</item>
+  </string-array>
+
+
+  <string-array name="title_array2">
     <item>Inter-religous and Ecumenical Meeting</item>
     <item>Public Mass</item>
     <item>Meeting with clergy, Priest, Nuns &amp; seminarists</item>
     <item>Visit</item>
-    </string-array>
+  </string-array>
 
-    <string-array name="venue_array2">
-
-
-        <item>Apostolic Nunciature, Nairobi </item>
-        <item>University of Nairobi</item>
-        <item>St. Mary’s School Nairobi</item>
-        <item>UNEP/UNON</item>
-    </string-array>
+  <string-array name="venue_array2">
 
 
-    <string-array name="time_array2">
-        <item>08:15 – 10:00</item>
-        <item>10:00 – 15:45</item>
-        <item>15:45 – 17:30</item>
-        <item>17:30</item>
-    </string-array>
+    <item>Apostolic Nunciature, Nairobi </item>
+    <item>University of Nairobi</item>
+    <item>St. Mary’s School Nairobi</item>
+    <item>UNEP/UNON</item>
+  </string-array>
+
+
+  <string-array name="time_array2">
+    <item>08:15 – 10:00</item>
+    <item>10:00 – 15:45</item>
+    <item>15:45 – 17:30</item>
+    <item>17:30</item>
+  </string-array>
 
 
 
-    <string-array name="title_array3">
+  <string-array name="title_array3">
     <item>Visit to Kangemi Slum </item>
     <item>Meeting with the Youth </item>
     <item>Meeting with Kenya Conference of Catholic Bishops</item>
     <item>Farewell Ceremony</item>
     <item>Departure for Entebbe, Uganda.</item>
-    </string-array>
+  </string-array>
 
-    <string-array name="venue_array3">
-
-
-        <item>Kangemi , Nairobi</item>
-        <item>Kasarani Stadium, Nairobi</item>
-        <item>VIP lounge at Kasarani Stadium</item>
-        <item>Jomo Kenyatta International Airport</item>
-        <item>Jomo Kenyatta International Airport</item>
-    </string-array>
+  <string-array name="venue_array3">
 
 
+    <item>Kangemi , Nairobi</item>
+    <item>Kasarani Stadium, Nairobi</item>
+    <item>VIP lounge at Kasarani Stadium</item>
+    <item>Jomo Kenyatta International Airport</item>
+    <item>Jomo Kenyatta International Airport</item>
+  </string-array>
 
 
-    <string-array name="time_array3">
-        <item>08:30 – 10:00</item>
-        <item>10:00 – 11:15</item>
-        <item>15:10 – 15:30</item>
-        <item>15:30</item>
-    </string-array>
+
+
+  <string-array name="time_array3">
+    <item>08:30 – 10:00</item>
+    <item>10:00 – 11:15</item>
+    <item>15:10 – 15:30</item>
+    <item>15:30</item>
+  </string-array>
+
+  <string name="StJosephPrayer" >
+
+      St Joseph, father and guardian of virgins, to whose faithful keeping Christ Jesus and Mary, the virgin of virgins, were entrusted, I pray and beseech you by that twofold and most precious charge, by Jesus and Mary, to save me from all uncleanness, to keep my mind untainted, my heart pure and my body chaste; and to help me always to serve Jesus and Mary in perfect chastity. Amen.
+</string>
 
 </resources>

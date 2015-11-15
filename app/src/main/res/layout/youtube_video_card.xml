@@ -6,6 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_marginLeft="5dp"
+    android:layout_marginTop="2.5dp"
+    android:layout_marginBottom="2.5dp"
     android:layout_marginRight="5dp"
     card_view:cardCornerRadius="4dp"
     card_view:cardPreventCornerOverlap="true"
