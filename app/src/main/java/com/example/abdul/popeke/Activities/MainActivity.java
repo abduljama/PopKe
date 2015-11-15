@@ -24,7 +24,8 @@ import android.widget.Toast;
 
 import com.example.abdul.popeke.AboutFragment;
 import com.example.abdul.popeke.DonateFragment;
-import com.example.abdul.popeke.NewsItems.TabFragment;
+import com.example.abdul.popeke.NewsItems.MediaFeedTabView;
+
 
 import com.example.abdul.popeke.Prayers.ExpandbleListAdapter;
 import com.example.abdul.popeke.PrayersFragment;
@@ -78,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+        mFragmentTransaction.replace(R.id.containerView, new MediaFeedTabView()
+        ).commit();
 
 
 
@@ -170,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                 */
                 if (menuItem.getItemId() == R.id.nav_item_media) {
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
-                    xfragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+                    xfragmentTransaction.replace(R.id.containerView, new MediaFeedTabView()).commit();
 
                     toolbar.setTitle("Media Feed");
                 }

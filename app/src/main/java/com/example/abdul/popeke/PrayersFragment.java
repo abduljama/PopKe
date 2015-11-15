@@ -15,6 +15,8 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,13 +26,20 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.example.abdul.popeke.Activities.MainActivity;
+import com.example.abdul.popeke.NewsItems.MediaFeedTabView;
 import com.example.abdul.popeke.Prayers.ExpandbleListAdapter;
+import com.example.abdul.popeke.Prayers.ShowPrayerFragment;
+import com.example.abdul.popeke.Program.ProgramFragment;
+import com.example.abdul.popeke.YouTube.YouTubeRecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class PrayersFragment extends Fragment {
+
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
 
     //prayers listview stuff
     ExpandbleListAdapter listAdapter;
@@ -45,7 +54,7 @@ View view;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //return inflater.inflate(R.layout.fragment_prayers, null);
         view = inflater.inflate(R.layout.fragment_prayers, container, false);
-
+        mFragmentManager = getFragmentManager();
 
         //set up expandable list for prayers
 
@@ -72,13 +81,27 @@ View view;
                                                         @Override
                                                         public boolean onChildClick(ExpandableListView parent, View v,
                                                                                     int groupPosition, int childPosition, long id) {
-                                                            Toast.makeText(getActivity(),
+                                                           /* Toast.makeText(getActivity(),
                                                                     listDataHeader.get(groupPosition)
                                                                             + " : "
                                                                             + listDataChild.get(
                                                                             listDataHeader.get(groupPosition)).get(
                                                                             childPosition), Toast.LENGTH_SHORT)
-                                                                    .show();
+                                                                    .show();*/
+
+
+
+                                                            FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+
+                                                            Bundle bundle = new Bundle();
+                                                            String prayer = listDataChild.get(
+                                                                    listDataHeader.get(groupPosition)).get(
+                                                                    childPosition);
+                                                            bundle.putString("prayer", prayer);
+                                                            ShowPrayerFragment prayerFragment = new ShowPrayerFragment();
+                                                            prayerFragment.setArguments(bundle);
+
+                                                            xfragmentTransaction.replace(R.id.containerView, prayerFragment).addToBackStack( "tag" ).commit();
                                                             return false;
                                                         }
                                                     }
@@ -86,10 +109,9 @@ View view;
         );
 
 
-        // now it will not fail here
-
         return view;
     }
+
     /*
      * Preparing the list data for Prayers Fragment
      */
@@ -106,13 +128,17 @@ View view;
 
         // Adding child data
         List<String> daily_prayers = new ArrayList<String>();
-        daily_prayers.add("Basic Prayers");
+
+        daily_prayers.add("Prayer of The Pope");
+        daily_prayers.add("Sign of The Cross");
         daily_prayers.add("The Apostles Creed");
         daily_prayers.add("Hail Holy Queen");
         daily_prayers.add("Act of Contrition");
-        daily_prayers.add("Act of Hope , Act Of Love");
+        daily_prayers.add("Act of Hope , Love and Faith");
         daily_prayers.add("The Angelus");
-        daily_prayers.add("Act of Faith");
+
+        daily_prayers.add("Prayer of St.Joseph");
+
 
         List<String> rosary = new ArrayList<String>();
         rosary.add("Introduction");
@@ -129,18 +155,18 @@ View view;
         List<String>cross = new ArrayList<String>();
         cross.add("First Station: Jesus is condemned to death");
         cross.add("Second Station: Jesus carries his cross");
-        cross.add("Third Station: Jesus is condemned to death");
-        cross.add("Fourth Station: Jesus is condemned to death");
-        cross.add("Fifth Station: Jesus is condemned to death");
-        cross.add("Sixth Station: Jesus is condemned to death");
-        cross.add("Seventh Station: Jesus is condemned to death");
-        cross.add("Eighth Station: Jesus is condemned to death");
-        cross.add("Ninth Station: Jesus is condemned to death");
-        cross.add("Tenth Station: Jesus is condemned to death");
-        cross.add("Eleventh Station: Jesus is condemned to death");
-        cross.add("Twelfth Station: Jesus is condemned to death");
-        cross.add("Thirteenth Station: Jesus is condemned to death");
-        cross.add("Fourteenth Station: Jesus is condemned to death");
+        cross.add("Third Station: Jesus falls the first time");
+        cross.add("Fourth Station: Jesus meets his mother");
+        cross.add("Fifth Station: Simon of Cyrene helps Jesus to carry his cross");
+        cross.add("Sixth Station: Veronica wipes the face of Jesus");
+        cross.add("Seventh Station: Jesus falls the second time");
+        cross.add("Eighth Station: Jesus meets the women of Jerusalem");
+        cross.add("Ninth Station: Jesus falls a third time");
+        cross.add("Tenth Station: Jesus’ clothes are taken away");
+        cross.add("Eleventh Station: Jesus is nailed to the cross");
+        cross.add("Twelfth Station: Jesus dies on the cross");
+        cross.add("Thirteenth Station: The body of Jesus is taken down from the cross");
+        cross.add("Fourteenth Station: Jesus is laid in the tomb");
 
 
         listDataChild.put(listDataHeader.get(0), daily_prayers); // Header, Child data
