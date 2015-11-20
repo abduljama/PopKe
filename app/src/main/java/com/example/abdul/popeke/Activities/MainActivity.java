@@ -12,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
@@ -23,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.abdul.popeke.AboutFragment;
+import com.example.abdul.popeke.BiographyFragment;
 import com.example.abdul.popeke.DonateFragment;
 import com.example.abdul.popeke.NewsItems.MediaFeedTabView;
 
@@ -73,14 +75,17 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mNavigationView = (NavigationView) findViewById(R.id.menu);
 
+        mDrawerLayout.openDrawer(Gravity.LEFT);
+
         /**
          * Lets inflate the very first fragment
          * Here , we are inflating the TabFragment as the first Fragment
          */
 
         mFragmentManager = getSupportFragmentManager();
+
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.containerView, new MediaFeedTabView()
+        mFragmentTransaction.replace(R.id.containerView, new BiographyFragment()
         ).commit();
 
 
@@ -138,6 +143,16 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                     xfragmentTransaction.replace(R.id.containerView, new PrayersFragment()).commit();
                     toolbar.setTitle("Pray With Pope Francis");
+                }
+                if (menuItem.getItemId() == R.id.nav_item_biography) {
+
+                    // WebView wv;
+                    //  wv = (WebView) findViewById(R.id.webView2);
+//                    wv.loadUrl("file:///android_asset/pope_prayer.html");
+
+                    FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+                    xfragmentTransaction.replace(R.id.containerView, new BiographyFragment()).commit();
+                    toolbar.setTitle("Biography of the Pope");
                 }
                 if (menuItem.getItemId() == R.id.nav_item_program) {
 
