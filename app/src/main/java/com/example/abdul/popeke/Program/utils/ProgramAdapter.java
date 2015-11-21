@@ -55,8 +55,8 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.MyViewHo
         });
         */
 
-        holder.pTime.setText("Time : "+ current.pTime);
-        holder.location.setText("Venue :" + current.pLocation);
+        holder.pTime.setText("Time: "+ current.pTime);
+        holder.location.setText("Venue: " + current.pLocation);
         holder.pDesc.setText(current.pDesc);
         holder.image.setImageResource(current.pImage);
     }

@@ -38,7 +38,7 @@ public class ShowPrayerFragment extends Fragment {
         switch (prayer_name) {
 
             //common prayers
-            case "Prayer of The Pope":
+            case "Prayer for The Pope":
                 url = "file:///android_asset/pope_prayer.html";
                 break;
 

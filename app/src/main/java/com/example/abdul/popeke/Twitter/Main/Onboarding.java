@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.abdul.popeke.Activities.MainActivity;
 import com.example.abdul.popeke.R;
 import com.example.abdul.popeke.Twitter.Fragments.OnboardingFragment1;
 import com.example.abdul.popeke.Twitter.Fragments.OnboardingFragment2;

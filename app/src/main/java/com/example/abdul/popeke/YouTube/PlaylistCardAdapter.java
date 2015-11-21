@@ -96,7 +96,13 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
         final VideoStatistics videoStatistics = video.getStatistics();
 
         holder.mTitleText.setText(videoSnippet.getTitle());
-        holder.mDescriptionText.setText(videoSnippet.getDescription());
+        try {
+            holder.mDescriptionText.setText(videoSnippet.getDescription().substring(0,videoSnippet.getDescription().indexOf("----")));
+        }
+        catch (Exception nodescription){
+            holder.mDescriptionText.setText(videoSnippet.getDescription());
+        }
+
 
         // load the video thumbnail image
         Picasso.with(holder.mContext)

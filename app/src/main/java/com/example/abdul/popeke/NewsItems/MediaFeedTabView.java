@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.abdul.popeke.R;
+import com.example.abdul.popeke.NewsItems.utils.TwitterTest;
 import com.example.abdul.popeke.YouTube.YouTubeRecyclerViewFragment;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpTransport;
@@ -55,10 +56,16 @@ public class MediaFeedTabView extends Fragment {
             tabLayout = (TabLayout) x.findViewById(R.id.tabs);
             viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
+
+
         /**
          *Set an Apater for the View Pager
          */
         viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
+
+//set ofscreen limit to prevent reloading
+
+        viewPager.setOffscreenPageLimit(2);
 
         /**
          * Now , this is a workaround ,
@@ -74,6 +81,7 @@ public class MediaFeedTabView extends Fragment {
         });
 
         return x;
+
 
     }
 
@@ -91,7 +99,7 @@ public class MediaFeedTabView extends Fragment {
         public Fragment getItem(int position)
         {
           switch (position){
-              case 0 : return new TwitterFragment();
+              case 0 : return new TwitterTest();
               case 1 : return new FaceBookFragment();
               case 2 : return new YouTubeRecyclerViewFragment().newInstance(mYoutubeDataApi, YOUTUBE_PLAYLIST);
           }
