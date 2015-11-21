@@ -14,22 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.AdapterView;
-
-
-import android.widget.ExpandableListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.abdul.popeke.AboutFragment;
 import com.example.abdul.popeke.BiographyFragment;
 import com.example.abdul.popeke.DonateFragment;
 import com.example.abdul.popeke.NewsItems.MediaFeedTabView;
-
-
-import com.example.abdul.popeke.Prayers.ExpandbleListAdapter;
 import com.example.abdul.popeke.PrayersFragment;
 import com.example.abdul.popeke.Program.ProgramFragment;
 import com.example.abdul.popeke.R;
@@ -40,10 +30,9 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.youtube.YouTube;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -52,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
     Toolbar toolbar;
+    private static final String YOUTUBE_PLAYLIST = "PLwHV_QFJijrxibV2k5SyrEYan0I42MaCi";
+    private YouTube mYoutubeDataApi;
+    private final GsonFactory mJsonFactory = new GsonFactory();
+    private final HttpTransport mTransport = AndroidHttp.newCompatibleTransport();
     Spinner spinner_nav;
 
 
@@ -60,13 +53,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Parse.enableLocalDatastore(this);
 
+        Parse.initialize(this, "QjpXM7TaA5v0f6JpnETITmFH5srVG7fr9VJKgBgM", "dmULcfLUq8GMSHCw3I4uwb4MW4MLP7fZ0KrgNkx3");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
+
+        ParseObject gameScore = new ParseObject("GameScore");
+        gameScore.put("score", 1337);
+        gameScore.put("playerName", "Sean Plott");
+        gameScore.put("cheatMode", false);
+        gameScore.saveInBackground();
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle(R.string.app_name);
+
+        mYoutubeDataApi = new YouTube.Builder(mTransport, mJsonFactory, null)
+                .setApplicationName(getResources().getString(R.string.app_name))
+                .build();
 
         /**
          *Setup the DrawerLayout and NavigationView
@@ -115,6 +121,18 @@ public class MainActivity extends AppCompatActivity {
 
                     toolbar.setTitle("Donate");
                 }
+
+                if (menuItem.getItemId() == R.id.nav_item_videos ) {
+
+                    FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+                    xfragmentTransaction.replace(R.id.containerView, new YouTubeRecyclerViewFragment().newInstance(mYoutubeDataApi, YOUTUBE_PLAYLIST)).commit();
+
+                    toolbar.setTitle("Videos");
+                }
+
+
+
+
 
              /*   if (menuItem.getItemId() == R.id.nav_item_gallery) {
 

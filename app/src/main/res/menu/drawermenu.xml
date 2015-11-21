@@ -1,4 +1,14 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"><item android:title="Register" android:id="@+id/navigation_item_register" android:icon="@drawable/register"/><item android:title="Donate" android:icon="@drawable/bread23" android:id="@+id/nav_item_donate"/><item android:title="Program" android:icon="@drawable/lists5" android:id="@+id/nav_item_program"/><item android:title="Media Feed" android:icon="@drawable/newspaper11" android:id="@+id/nav_item_media"/><!--   <item android:title="Directions" android:icon="@drawable/pin56" android:id="@+id/nav_item_directions"></item>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Register" android:id="@+id/navigation_item_register" android:icon="@drawable/register"/>
+    <item android:title="Donate" android:icon="@drawable/bread23" android:id="@+id/nav_item_donate"/>
+    <item android:title="Program" android:icon="@drawable/lists5" android:id="@+id/nav_item_program"/>
+    <item android:title="Media Feed" android:icon="@drawable/newspaper11" android:id="@+id/nav_item_media"/>
+    <item android:title="Videos " android:icon="@drawable/videos" android:id="@+id/nav_item_videos"/>
+
+
+
+
+    <!--   <item android:title="Directions" android:icon="@drawable/pin56" android:id="@+id/nav_item_directions"></item>
 --><!--<item android:title="Prayers &amp; Hymns">-->
     <!--<menu>-->
     <!--<item-->

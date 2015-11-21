@@ -26,7 +26,7 @@ public class MediaFeedTabView extends Fragment {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
-    public static int int_items = 3 ;
+    public static int int_items = 2 ;
 
 
  

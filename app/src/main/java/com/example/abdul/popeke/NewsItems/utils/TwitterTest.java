@@ -10,23 +10,19 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ExpandableListView;
 
-import com.example.abdul.popeke.Activities.MainActivity;
 import com.example.abdul.popeke.Prayers.ExpandbleListAdapter;
 import com.example.abdul.popeke.R;
 import com.example.abdul.popeke.Twitter.List.Searches;
@@ -147,7 +143,7 @@ public class TwitterTest extends Fragment{
             new DownloadTwitterTask().execute("@popeinkenya");
         } else {
             Log.v("Network", "No network connection available.");
-            Snackbar.make(getView(), "No Network Connectivity", Snackbar.LENGTH_SHORT).show();
+          //  Snackbar.make(getActivity(), "No Network Connectivity", Snackbar.LENGTH_SHORT).show();
         }
     }
 
