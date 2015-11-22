@@ -1,6 +1,7 @@
 package com.example.abdul.popeke.Twitter.ViewHolder;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class TweetViewHolder extends RecyclerView.ViewHolder {
         tweet = (TextView) itemView.findViewById(R.id.tweetStatus);
         userpic = (ImageView) itemView.findViewById(R.id.userimage);
         name = (TextView) itemView.findViewById(R.id.Name);
+        tweet.setMovementMethod(LinkMovementMethod.getInstance());
 
     }
 

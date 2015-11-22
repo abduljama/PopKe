@@ -3,7 +3,7 @@
     <item android:title="Donate" android:icon="@drawable/bread23" android:id="@+id/nav_item_donate"/>
     <item android:title="Program" android:icon="@drawable/lists5" android:id="@+id/nav_item_program"/>
     <item android:title="Media Feed" android:icon="@drawable/newspaper11" android:id="@+id/nav_item_media"/>
-    <item android:title="Videos " android:icon="@drawable/videos" android:id="@+id/nav_item_videos"/>
+    <item android:title="Videos " android:icon="@drawable/newspaper11" android:id="@+id/nav_item_videos"/>
 
 
 

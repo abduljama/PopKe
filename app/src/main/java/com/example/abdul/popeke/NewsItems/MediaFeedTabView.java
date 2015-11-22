@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.abdul.popeke.R;
-import com.example.abdul.popeke.NewsItems.utils.TwitterTest;
 import com.example.abdul.popeke.YouTube.YouTubeRecyclerViewFragment;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpTransport;
