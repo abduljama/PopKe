@@ -26,6 +26,8 @@ import com.example.abdul.popeke.R;
 import com.example.abdul.popeke.Registration.RegisterFragment;
 import com.example.abdul.popeke.SupportWithTheRosaryFragment;
 import com.example.abdul.popeke.YouTube.YouTubeRecyclerViewFragment;
+import com.google.android.youtube.player.YouTubeApiServiceUtil;
+import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
@@ -69,6 +71,17 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle(R.string.app_name);
+
+        //youtube stuff
+
+        //Check for any issues kama the official youtube app is installed
+
+        final YouTubeInitializationResult result = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(this);
+
+        if (result != YouTubeInitializationResult.SUCCESS) {
+            //If there are any issues we can show an error dialog.
+            result.getErrorDialog(this, 0).show();
+        }
 
         mYoutubeDataApi = new YouTube.Builder(mTransport, mJsonFactory, null)
                 .setApplicationName(getResources().getString(R.string.app_name))

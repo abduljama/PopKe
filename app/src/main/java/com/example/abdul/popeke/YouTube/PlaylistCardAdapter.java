@@ -11,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.abdul.popeke.Activities.MainActivity;
 import com.example.abdul.popeke.R;
 import com.example.abdul.popeke.YouTube.model.Playlist;
+import com.google.android.youtube.player.YouTubeStandalonePlayer;
 import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoContentDetails;
 import com.google.api.services.youtube.model.VideoSnippet;
@@ -113,10 +115,22 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
         // set the click listener to play the video
         holder.mThumbnailImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                holder.mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + video.getId())));
+            public void onClick(View v) {
+
+//here i can either call the light box activity or hii ya youtube fragment activity
+                //lakini naona light box inakaa better
+
+               /* Intent intent = new Intent(v.getContext(), YouTubeFragmentActivity.class);
+                //you can pass on the Pojo with PARCELABLE
+                intent.putExtra(YouTubeFragmentActivity.KEY_VIDEO_ID, video.getId());
+                v.getContext().startActivity(intent);*/
+
+                Intent intent = new Intent(v.getContext(), CustomLightBoxActivity.class);
+                //you can pass on the Pojo with PARCELABLE
+                intent.putExtra(CustomLightBoxActivity.KEY_VIDEO_ID, video.getId());
+                v.getContext().startActivity(intent);
             }
-        });
+      });
 
         // create and set the click listener for both the share icon and share text
         View.OnClickListener shareClickListener = new View.OnClickListener() {

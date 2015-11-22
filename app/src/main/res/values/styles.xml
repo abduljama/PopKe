@@ -9,4 +9,11 @@
     </style>
     <style name="MyTheme" parent="android:Theme"></style>
 
+    <style name="AppTheme.Translucent" parent="AppTheme">
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
 </resources>
