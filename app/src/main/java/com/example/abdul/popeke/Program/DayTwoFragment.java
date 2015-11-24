@@ -68,6 +68,7 @@ public class DayTwoFragment extends Fragment {
             current.pTitle= title[i];
             current.pTime =  time[i];
             current.pLocation = venue[i];
+            current.pDirection="Show Direction";
 
             data.add(current);
 

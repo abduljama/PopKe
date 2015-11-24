@@ -19,6 +19,7 @@ import android.widget.Spinner;
 import com.example.abdul.popeke.AboutFragment;
 import com.example.abdul.popeke.BiographyFragment;
 import com.example.abdul.popeke.DonateFragment;
+import com.example.abdul.popeke.MapsFragment;
 import com.example.abdul.popeke.NewsItems.MediaFeedTabView;
 import com.example.abdul.popeke.PrayersFragment;
 import com.example.abdul.popeke.Program.ProgramFragment;
@@ -55,16 +56,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Parse.enableLocalDatastore(this);
+//        Parse.enableLocalDatastore(this);
+//
+//        Parse.initialize(this, "QjpXM7TaA5v0f6JpnETITmFH5srVG7fr9VJKgBgM", "dmULcfLUq8GMSHCw3I4uwb4MW4MLP7fZ0KrgNkx3");
+//        ParseInstallation.getCurrentInstallation().saveInBackground();
+//
+//
+//        ParseObject gameScore = new ParseObject("GameScore");
+//        gameScore.put("score", 1337);
+//        gameScore.put("playerName", "Sean Plott");
+//        gameScore.put("cheatMode", false);
+//        gameScore.saveInBackground();
 
-        Parse.initialize(this, "QjpXM7TaA5v0f6JpnETITmFH5srVG7fr9VJKgBgM", "dmULcfLUq8GMSHCw3I4uwb4MW4MLP7fZ0KrgNkx3");
-        ParseInstallation.getCurrentInstallation().saveInBackground();
 
-        ParseObject gameScore = new ParseObject("GameScore");
-        gameScore.put("score", 1337);
-        gameScore.put("playerName", "Sean Plott");
-        gameScore.put("cheatMode", false);
-        gameScore.saveInBackground();
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -98,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
         /**
          * Lets inflate the very first fragment
-         * Here , we are inflating the TabFragment as the first Fragment
+         * Here , we are inflating the BiographyFragment as the first Fragment
          */
 
         mFragmentManager = getSupportFragmentManager();
@@ -215,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
-                    xfragmentTransaction.replace(R.id.containerView, new SupportWithTheRosaryFragment()).commit();
+                    xfragmentTransaction.replace(R.id.containerView, new MapsFragment()).commit();
                     //  addItemsToSpinner();
 
                     /** if (toolbar != null) {

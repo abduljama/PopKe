@@ -3,6 +3,7 @@ package com.example.abdul.popeke.YouTube;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ public class CustomLightBoxActivity extends YouTubeBaseActivity implements YouTu
         super.onCreate(bundle);
         setContentView(R.layout.youtube_custom_lightbox);
 
-        final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout_youtube_activity);
+        final LinearLayout relativeLayout = (LinearLayout) findViewById(R.id.relativeLayout_youtube_activity);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +67,7 @@ public class CustomLightBoxActivity extends YouTubeBaseActivity implements YouTu
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
         mPlayer = youTubePlayer;
+        mPlayer.setShowFullscreenButton(false);
         youTubePlayer.setFullscreenControlFlags(YouTubePlayer.FULLSCREEN_FLAG_CONTROL_ORIENTATION);
         youTubePlayer.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CONTROL_SYSTEM_UI);
         youTubePlayer.setOnFullscreenListener(new YouTubePlayer.OnFullscreenListener() {

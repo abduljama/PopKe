@@ -66,6 +66,7 @@ public class DayThreeFragment extends Fragment {
             current.pLocation = venue[i];
             current.pTitle = title[i];
             current.pTime = time[i];
+            current.pDirection="Show Direction";
             data.add(current);
 
 

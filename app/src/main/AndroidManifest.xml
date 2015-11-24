@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.abdul.popeke" >
 
+    <permission android:name="com.example.abdul.popeke.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.abdul.popeke.permission.MAPS_RECEIVE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -53,10 +58,18 @@
         android:name="CONSUMER_SECRET"
         android:value="vf5HIqiuYeLxoNgsu8jvRanYEV1sRfxQesVha6siiTd0nGNR7G" />
 
+      <meta-data
+          android:name="com.google.android.maps.v2.API_KEY"
+          android:value="AIzaSyDsEBXqfF8GH5J1Z28YVdua5xw41okonno"/>
+
     <activity
         android:name=".Twitter.Main.Onboarding"
         android:screenOrientation="portrait"
-        >
+        />
+      <activity
+          android:name=".TestMapActivity"
+          android:screenOrientation="portrait"
+          >
     </activity>
       <service android:name="com.parse.PushService" />
       <receiver android:name="com.parse.ParsePushBroadcastReceiver"

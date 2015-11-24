@@ -69,7 +69,7 @@ public class DayOneFragment extends Fragment {
             current.pImage = icons[i];
             current.pTitle= title[i];
             current.pLocation = venue[i];
-
+current.pDirection="Show Direction";
             current.pTime =  time[i];
             data.add(current);
 

@@ -1,6 +1,7 @@
 package com.example.abdul.popeke.NewsItems.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.abdul.popeke.R;
+import com.example.abdul.popeke.YouTube.CustomLightBoxActivity;
 
 import java.util.Collections;
 import java.util.List;
@@ -47,6 +49,7 @@ public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.title.setText(current.title);
         holder.conent.setText(current.content);
         holder.image.setImageResource(current.image);
+
 
 
         }

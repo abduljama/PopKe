@@ -9,6 +9,7 @@ public class ProgramItems {
     public  String  pLocation;
     public  String  pTitle;
     public String pDesc;
+    public String pDirection;
     public  int  pImage;
 
 }
