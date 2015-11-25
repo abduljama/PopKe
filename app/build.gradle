@@ -12,8 +12,8 @@ android {
         applicationId "ke.co.ilab"
         minSdkVersion 12
         targetSdkVersion 23
-        versionCode 6
-        versionName "1.5"
+        versionCode 8
+        versionName "1.7"
 
 
     }

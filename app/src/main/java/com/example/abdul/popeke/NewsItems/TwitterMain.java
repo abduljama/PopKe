@@ -6,30 +6,29 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ExpandableListView;
 
-import com.example.abdul.popeke.Activities.MainActivity;
 import com.example.abdul.popeke.Prayers.ExpandbleListAdapter;
 import com.example.abdul.popeke.R;
 import com.example.abdul.popeke.Twitter.List.Searches;
@@ -39,7 +38,6 @@ import com.example.abdul.popeke.Twitter.Model.SearchResults;
 import com.example.abdul.popeke.Twitter.Model.Wrapper;
 import com.example.abdul.popeke.Twitter.ViewHolder.TweetViewHolder;
 import com.example.abdul.popeke.Twitter.ViewHolder.UserViewHolder;
-import com.example.abdul.popeke.YouTube.YouTubeRecyclerViewFragment;
 import com.google.gson.Gson;
 
 import org.apache.http.HttpEntity;
@@ -64,11 +62,9 @@ import java.util.List;
 /**
  * Created by kiprop on 11/21/15.
  */
-public class TwitterTest extends Fragment{
+public class TwitterMain extends Fragment{
 
-    public static TabLayout tabLayout;
-    public static ViewPager viewPager;
-    public static int int_items = 2 ;
+
 
 
     public RecyclerView list;
@@ -82,6 +78,8 @@ public class TwitterTest extends Fragment{
     String Secret = null;
     private SharedPreferences preferences;
     private Wrapper w;
+
+    CoordinatorLayout coordinatorLayout;
 
     FragmentTransaction mFragmentTransaction;
 
@@ -104,58 +102,10 @@ public class TwitterTest extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //return inflater.inflate(R.layout.fragment_prayers, null);
-        view = inflater.inflate(R.layout.twitter_activity_main, container, false);
+        view = inflater.inflate(R.layout.twitter_activity_main_user_tweets_only, container, false);
         //viewlltweets=inflater.inflate(R.layout.twitter_activity_all_tweets, container, false);
         //viewllmentions=inflater.inflate(R.layout.twitter_activity_mentions, container, false);
 
-
-        ///viewpager
-
-        tabLayout = (TabLayout) view.findViewById(R.id.tabs);
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
-
-        //listtitle = (RecyclerView) view.findViewById(R.id.listtitle);
-//        list = (RecyclerView) view.findViewById(R.id.listallmentions);
-//
-//        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-//        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//        list.setLayoutManager(layoutManager);
-
-
-
-
-        /**
-         *Set an Apater for the View Pager
-         */
-        viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
-
-//set ofscreen limit to prevent reloading
-
-        viewPager.setOffscreenPageLimit(1);
-
-        /*
-         * Now , this is a workaround ,
-         * The setupWithViewPager dose't works without the runnable .
-         * Maybe a Support Library Bug .
-         */
-
-        tabLayout.post(new Runnable() {
-            @Override
-            public void run() {
-                tabLayout.setupWithViewPager(viewPager);
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-    //ends here
 
 
     Key = getStringFromManifest("CONSUMER_KEY");
@@ -171,6 +121,7 @@ public class TwitterTest extends Fragment{
         list.setLayoutManager(layoutManager2);
 
 
+        coordinatorLayout =  (CoordinatorLayout)view.findViewById(R.id.coordinatorLayout3);
         downloadSearches();
 
 
@@ -200,7 +151,7 @@ public class TwitterTest extends Fragment{
 
     // download twitter searches after first checking to see if there is a network connection
     public void downloadSearches() {
-        ConnectivityManager connMgr = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
         if (networkInfo != null && networkInfo.isConnected()) {
@@ -209,7 +160,20 @@ public class TwitterTest extends Fragment{
             new DownloadTwitterTask().execute("@popeinkenya");
         } else {
             Log.v("Network", "No network connection available.");
-            Snackbar.make(view.getRootView(), "No Network Connectivity", Snackbar.LENGTH_SHORT).show();
+            Snackbar snackbar = Snackbar
+                    .make(coordinatorLayout, "No Internet Connection", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("RETRY", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+//                            webView.loadUrl(url);
+                            downloadSearches();
+
+                        }
+                    });
+
+// Changing message text color
+            snackbar.setActionTextColor(Color.RED);
+            snackbar.show();
         }
     }
 
@@ -236,6 +200,8 @@ private class DownloadTwitterTask extends AsyncTask<String, Void, Wrapper> {
 
 
         if (searchTerms.length > 0) {
+
+
 //            if (searchTerms[0].substring(0, 1).equals("@")) {
             w.userResult = getUserSearchStream(searchTerms[0]);
             w.tweetResult = getUsersTweetsSearchStream("popeinkenya");
@@ -446,7 +412,7 @@ public class Adapter extends RecyclerView.Adapter<TweetViewHolder> {
 
     @Override
     public void onBindViewHolder(TweetViewHolder viewHolder, int i) {
-        //viewHolder.update(searches.get(i));
+        viewHolder.update(searches.get(i));
     }
 
     @Override
@@ -455,55 +421,7 @@ public class Adapter extends RecyclerView.Adapter<TweetViewHolder> {
     }
 }
 
-//adapter ya viewpager
 
-class MyAdapter extends FragmentPagerAdapter {
-
-    public MyAdapter(FragmentManager fm) {
-        super(fm);
-    }
-
-    /**
-     * Return fragment with respect to Position .
-     */
-
-    @Override
-    public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                return new TwitterFragmentAllTweets();
-            case 1:
-                return new TwitterFragmentAllMentions();
-
-        }
-        return null;
-    }
-
-    @Override
-    public int getCount() {
-
-        return int_items;
-
-    }
-
-    /**
-     * This method returns the title of the tab according to the position.
-     */
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-
-        switch (position) {
-            case 0:
-                return "Tweets";
-            case 1:
-                return "Mentions";
-
-
-        }
-        return null;
-    }
-}
 
 public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -536,8 +454,8 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        //return (users.size() + searches.size());
-        return users.size();
+        return (users.size() + searches.size());
+
     }
 
     @Override

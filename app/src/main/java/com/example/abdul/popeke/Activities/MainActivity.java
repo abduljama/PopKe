@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
-                    xfragmentTransaction.replace(R.id.containerView, new MapsFragment()).commit();
+                    xfragmentTransaction.replace(R.id.containerView, new SupportWithTheRosaryFragment()).commit();
                     //  addItemsToSpinner();
 
                     /** if (toolbar != null) {

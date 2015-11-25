@@ -98,7 +98,7 @@ public class MediaFeedTabView extends Fragment {
         public Fragment getItem(int position)
         {
           switch (position){
-              case 0 : return new TwitterTest();
+              case 0 : return new TwitterMain();
               case 1 : return new FaceBookFragment();
               case 2 : return new YouTubeRecyclerViewFragment().newInstance(mYoutubeDataApi, YOUTUBE_PLAYLIST);
           }

@@ -1,7 +1,13 @@
 package com.example.abdul.popeke.YouTube;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +16,10 @@ import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.ProgressBar;
 
+import com.example.abdul.popeke.Activities.MainActivity;
 import com.example.abdul.popeke.BuildConfig;
 import com.example.abdul.popeke.R;
 import com.example.abdul.popeke.YouTube.model.Playlist;
@@ -50,6 +59,10 @@ public class YouTubeRecyclerViewFragment extends Fragment {
     private PlaylistCardAdapter mAdapter;
     private YouTube mYouTubeDataApi;
 
+    CoordinatorLayout coordinatorLayout;
+
+ProgressDialog pd;
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -79,6 +92,16 @@ public class YouTubeRecyclerViewFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
+
+
+
+
+
+
 //        setRetainInstance(true);
         if (getArguments() != null) {
             mPlaylistId = getArguments().getString(ARG_YOUTUBE_PLAYLIST_ID);
@@ -87,34 +110,66 @@ public class YouTubeRecyclerViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
         // set the Picasso debug indicator only for debug builds
         Picasso.with(getActivity()).setIndicatorsEnabled(BuildConfig.DEBUG);
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.youtube_recycler_view_fragment, container, false);
 
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.youtube_recycler_view);
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
+        coordinatorLayout =  (CoordinatorLayout)rootView.findViewById(R.id.coordinatorLayout2);
 
-        Resources resources = getResources();
-        if (resources.getBoolean(R.bool.isTablet)) {
-            // use a staggered grid layout if we're on a large screen device
-            mLayoutManager = new StaggeredGridLayoutManager(resources.getInteger(R.integer.columns), StaggeredGridLayoutManager.VERTICAL);
-        } else {
-            // use a linear layout on phone devices
-            mLayoutManager = new LinearLayoutManager(getActivity());
-        }
+        if (!isNetworkAvailable(getActivity())) {
 
-        mRecyclerView.setLayoutManager(mLayoutManager);
+            Snackbar snackbar = Snackbar
+                    .make(coordinatorLayout, "No Internet Connection", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("RETRY", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+//                            webView.loadUrl(url);
+new YouTubeRecyclerViewFragment();
 
-        return rootView;
-    }
+                        }});
 
-    @Override
+// Changing message text color
+                            snackbar.setActionTextColor(Color.RED);
+                            snackbar.show();
+                        }
+
+                        mRecyclerView=(RecyclerView)rootView.findViewById(R.id.youtube_recycler_view);
+                        // use this setting to improve performance if you know that changes
+                        // in content do not change the layout size of the RecyclerView
+                        mRecyclerView.setHasFixedSize(true);
+
+                        Resources resources = getResources();
+                        if(resources.getBoolean(R.bool.isTablet))
+
+                        {
+                            // use a staggered grid layout if we're on a large screen device
+                            mLayoutManager = new StaggeredGridLayoutManager(resources.getInteger(R.integer.columns), StaggeredGridLayoutManager.VERTICAL);
+                        }
+
+                        else
+
+                        {
+                            // use a linear layout on phone devices
+                            mLayoutManager = new LinearLayoutManager(getActivity());
+                        }
+
+                        mRecyclerView.setLayoutManager(mLayoutManager);
+
+                        return rootView;
+                    }
+
+            @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+//create progress dialog
+        pd = new ProgressDialog(getActivity());
+        pd.setMessage("Loading Videos");
+        pd.show();
 
         // if we have a playlist in our retained fragment, use it to populate the UI
         if (mPlaylist != null) {
@@ -129,6 +184,10 @@ public class YouTubeRecyclerViewFragment extends Fragment {
                 @Override
                 public void onPostExecute(Pair<String, List<Video>> result) {
                     handleGetPlaylistResult(mPlaylist, result);
+                    if (pd != null) {
+                        pd.dismiss();
+                    }
+
                 }
             }.execute(mPlaylist.playlistId, mPlaylist.getNextPageToken());
         }
@@ -143,11 +202,19 @@ public class YouTubeRecyclerViewFragment extends Fragment {
                     @Override
                     public void onPostExecute(Pair<String, List<Video>> result) {
                         handleGetPlaylistResult(playlist, result);
+                        if (pd != null) {
+                            pd.dismiss();
+                        }
+                      ;
                     }
                 }.execute(playlist.playlistId, playlist.getNextPageToken());
             }
         });
         mRecyclerView.setAdapter(mAdapter);
+    }
+    public boolean isNetworkAvailable(final Context context) {
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
     }
 
     private void handleGetPlaylistResult(Playlist playlist, Pair<String, List<Video>> result) {

@@ -12,6 +12,8 @@
 <RelativeLayout
      android:paddingLeft="10dp"
     android:paddingRight="10dp"
+    android:id="@+id/rel"
+    android:layout_marginBottom="15dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -51,22 +53,30 @@
         android:layout_height="wrap_content"
         android:text="iLabAfrica is a Centre of Excellence in ICT innovation and Development set up in January 2011. It is an inde­pend­ent entity in the Faculty of Information Technology at Strathmore University. It was established to address the Millennium Development Goals(MDGs) and to contribute toward Kenya’s Vision 2030. The research center is involved in interdisciplinary research, students engagement, collaboration with government, industry and other funding agencies."
         android:textSize="19dp"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/imageView" />
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/abouttextx"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+
+        android:layout_below="@+id/abouttextx"
+        android:text="Special thanks to : \n Kiprop Korir , Abdirahman Jama , Clive Makamara"
+        android:textSize="19dp"
+        android:layout_marginBottom="20dp"
+
+        />
 
 
 </RelativeLayout>
+
 </ScrollView>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberPassword"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_gravity="right" />
+
 </LinearLayout>
